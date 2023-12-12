@@ -23,4 +23,8 @@ public class Car {
     private boolean movable() {
         return Randoms.pickNumberInRange(0, 9) >= 4;
     }
+
+    public String getDrivingDistance() {
+        return drivingDistance.getDrivingDistance();
+    }
 }
