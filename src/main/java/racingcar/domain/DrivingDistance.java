@@ -2,6 +2,7 @@ package racingcar.domain;
 
 public class DrivingDistance {
 
+    private static final String DISTANCE = "-";
     private int drivingDistance;
 
     public DrivingDistance(int drivingDistance) {
@@ -10,5 +11,9 @@ public class DrivingDistance {
 
     public void increase() {
         drivingDistance++;
+    }
+
+    public String getDrivingDistance() {
+        return DISTANCE.repeat(drivingDistance);
     }
 }
