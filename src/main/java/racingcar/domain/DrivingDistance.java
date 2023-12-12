@@ -4,10 +4,19 @@ import java.util.Objects;
 
 public class DrivingDistance {
 
+    private static final int ZERO = 0;
+
     private int drivingDistance;
 
     public DrivingDistance(int drivingDistance) {
+        validate(drivingDistance);
         this.drivingDistance = drivingDistance;
+    }
+
+    private void validate(int drivingDistance) {
+        if (drivingDistance < ZERO) {
+            throw new IllegalArgumentException();
+        }
     }
 
     public void increase() {
