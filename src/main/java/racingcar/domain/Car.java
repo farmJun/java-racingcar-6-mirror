@@ -24,6 +24,10 @@ public class Car {
         return Randoms.pickNumberInRange(0, 9) >= 4;
     }
 
+    public String getName() {
+        return carName.getName();
+    }
+
     public String getDrivingDistance() {
         return drivingDistance.getDrivingDistance();
     }
