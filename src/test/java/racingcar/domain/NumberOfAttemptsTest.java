@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class 를 {
+class NumberOfAttemptsTest {
 
     @DisplayName("유효한 숫자로 시도할 회수를 생성한다.")
     @ParameterizedTest
