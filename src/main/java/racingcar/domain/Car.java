@@ -1,12 +1,8 @@
 package racingcar.domain;
 
-import camp.nextstep.edu.missionutils.Randoms;
-
 public class Car implements Comparable<Car> {
 
     private static final int INITIAL_DRIVING_DISTANCE = 0;
-    private static final int ZERO = 0;
-    private static final int NINE = 9;
     private static final int MOVE_CRITERION = 4;
 
     private final Name carName;
