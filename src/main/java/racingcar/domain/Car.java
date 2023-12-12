@@ -4,14 +4,17 @@ import camp.nextstep.edu.missionutils.Randoms;
 
 public class Car implements Comparable<Car> {
 
-    private static final int initialDrivingDistance = 0;
+    private static final int INITIAL_DRIVING_DISTANCE = 0;
+    private static final int ZERO = 0;
+    private static final int NINE = 9;
+    private static final int MOVE_CRITERION = 4;
 
     private final Name carName;
     private final DrivingDistance drivingDistance;
 
     public Car(String carName) {
         this.carName = new Name(carName);
-        this.drivingDistance = new DrivingDistance(initialDrivingDistance);
+        this.drivingDistance = new DrivingDistance(INITIAL_DRIVING_DISTANCE);
     }
 
     public void attemptToMove() {
@@ -21,7 +24,7 @@ public class Car implements Comparable<Car> {
     }
 
     private boolean movable() {
-        return Randoms.pickNumberInRange(0, 9) >= 4;
+        return Randoms.pickNumberInRange(ZERO, NINE) >= MOVE_CRITERION;
     }
 
     public boolean isMostDrivenCar(DrivingDistance longestDrivingDistance) {

@@ -2,6 +2,7 @@ package racingcar.domain;
 
 public class NumberOfAttempts {
 
+    private static final int ZERO = 0;
     private int numberOfAttempts;
 
     public NumberOfAttempts(int numberOfAttempts) {
@@ -10,13 +11,13 @@ public class NumberOfAttempts {
     }
 
     private void validate(int numberOfAttempts) {
-        if (numberOfAttempts <= 0) {
+        if (numberOfAttempts <= ZERO) {
             throw new IllegalArgumentException();
         }
     }
 
     public boolean hasNext() {
-        return numberOfAttempts != 0;
+        return numberOfAttempts != ZERO;
     }
 
     public void finish() {

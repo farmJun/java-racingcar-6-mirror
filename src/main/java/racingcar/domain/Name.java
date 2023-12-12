@@ -2,6 +2,8 @@ package racingcar.domain;
 
 public class Name {
 
+    private final static int MINIMUM_LENGTH = 1;
+    private final static int MAXIMUM_LENGTH = 5;
     private final String name;
 
     public Name(String name) {
@@ -10,7 +12,7 @@ public class Name {
     }
 
     private void validate(String name) {
-        if (name.length() > 5 || name.length() < 1) {
+        if (name.length() > MAXIMUM_LENGTH || name.length() < MINIMUM_LENGTH) {
             throw new IllegalArgumentException();
         }
     }
