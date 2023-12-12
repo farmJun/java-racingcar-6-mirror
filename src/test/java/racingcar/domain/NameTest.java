@@ -15,7 +15,7 @@ class NameTest {
         assertDoesNotThrow(() -> new Name(input));
     }
 
-    @DisplayName("유효한 길이로 이름을 생성하면 예외가 발생한다.")
+    @DisplayName("유효하지 않은 길이로 이름을 생성하면 예외가 발생한다.")
     @ParameterizedTest
     @ValueSource(strings = {"", "abcdef"})
     void createNameByInvalidNameLength(String input) {
