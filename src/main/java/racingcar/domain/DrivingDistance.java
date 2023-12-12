@@ -1,8 +1,9 @@
 package racingcar.domain;
 
+import java.util.Objects;
+
 public class DrivingDistance {
 
-    private static final String DISTANCE = "-";
     private int drivingDistance;
 
     public DrivingDistance(int drivingDistance) {
@@ -13,7 +14,24 @@ public class DrivingDistance {
         drivingDistance++;
     }
 
-    public String getDrivingDistance() {
-        return DISTANCE.repeat(drivingDistance);
+    public int getDrivingDistance() {
+        return drivingDistance;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DrivingDistance)) {
+            return false;
+        }
+        DrivingDistance d = (DrivingDistance) o;
+        return Objects.equals(this.drivingDistance, d.drivingDistance);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(drivingDistance);
     }
 }
