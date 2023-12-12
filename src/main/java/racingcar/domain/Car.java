@@ -17,14 +17,14 @@ public class Car implements Comparable<Car> {
         this.drivingDistance = new DrivingDistance(INITIAL_DRIVING_DISTANCE);
     }
 
-    public void attemptToMove() {
-        if (movable()) {
+    public void attemptToMove(int number) {
+        if (movable(number)) {
             drivingDistance.increase();
         }
     }
 
-    private boolean movable() {
-        return Randoms.pickNumberInRange(ZERO, NINE) >= MOVE_CRITERION;
+    private boolean movable(int number) {
+        return number >= MOVE_CRITERION;
     }
 
     public boolean isMostDrivenCar(DrivingDistance longestDrivingDistance) {
