@@ -3,7 +3,7 @@ package racingcar.domain;
 public class DrivingDistance {
 
     private static final int initialDrivingDistance = 0;
-    private final int drivingDistance;
+    private int drivingDistance;
 
     public DrivingDistance() {
         this.drivingDistance = initialDrivingDistance;
@@ -13,7 +13,7 @@ public class DrivingDistance {
         this.drivingDistance = drivingDistance;
     }
 
-    public DrivingDistance increase() {
-        return new DrivingDistance(drivingDistance + 1);
+    public void increase() {
+        drivingDistance++;
     }
 }
