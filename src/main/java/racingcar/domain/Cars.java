@@ -1,5 +1,6 @@
 package racingcar.domain;
 
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,11 +28,21 @@ public class Cars {
         }
     }
 
-    public LinkedHashMap<String, String> getCarNameAndDrivingDistance() {
-        LinkedHashMap<String, String> carNameAndDrivingDistance = new LinkedHashMap<>();
+    public LinkedHashMap<Name, Integer> getCarNameAndDrivingDistance() {
+        LinkedHashMap<Name, Integer> carNameAndDrivingDistance = new LinkedHashMap<>();
         for (Car car : cars) {
             carNameAndDrivingDistance.put(car.getName(), car.getDrivingDistance());
         }
         return carNameAndDrivingDistance;
+    }
+
+    public DrivingDistance findLongestDrivingDistance() {
+        return new DrivingDistance(Collections.max(cars).getDrivingDistance());
+    }
+
+    public List<Car> findMostDrivenCars(DrivingDistance drivingDistance) {
+        return cars.stream()
+            .filter(car -> car.isMostDrivenCar(drivingDistance))
+            .collect(Collectors.toList());
     }
 }
